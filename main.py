@@ -10,10 +10,10 @@ from lxml.etree import CDATA
 
 MD_HEAD = """## Gitblog
 My personal blog using issues and GitHub Actions (随意转载，无需署名)
+[RSS Feed](https://raw.githubusercontent.com/{repo_name}/master/feed.xml)
 """
 
 BACKUP_DIR = "BACKUP"
-REPO_NAME = "yarbei_blog"
 ANCHOR_NUMBER = 5
 TOP_ISSUES_LABELS = ["Top"]
 TODO_ISSUES_LABELS = ["TODO"]
@@ -256,7 +256,7 @@ def generate_rss_feed(repo, filename, me):
     generator.atom_file(filename)
 
 
-def main(token, repo_name=REPO_NAME, issue_number=None, dir_name=BACKUP_DIR):
+def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
@@ -292,9 +292,9 @@ if __name__ == "__main__":
         os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
-#     parser.add_argument("repo_name", help="repo_name")
+    parser.add_argument("repo_name", help="repo_name")
     parser.add_argument(
         "--issue_number", help="issue_number", default=None, required=False
     )
     options = parser.parse_args()
-    main(options.github_token, REPO_NAME, options.issue_number)
+    main(options.github_token, options.repo_name, options.issue_number)
