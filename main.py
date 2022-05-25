@@ -13,6 +13,7 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 """
 
 BACKUP_DIR = "BACKUP"
+REPO_NAME = "yarbei_blog"
 ANCHOR_NUMBER = 5
 TOP_ISSUES_LABELS = ["Top"]
 TODO_ISSUES_LABELS = ["TODO"]
@@ -255,7 +256,7 @@ def generate_rss_feed(repo, filename, me):
     generator.atom_file(filename)
 
 
-def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
+def main(token, repo_name=REPO_NAME, issue_number=None, dir_name=BACKUP_DIR):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
