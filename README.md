@@ -1,6 +1,6 @@
 ## Gitblog
 My personal blog using issues and GitHub Actions (随意转载，无需署名)
-[RSS Feed](https://raw.githubusercontent.com/yarbei/yarbei_blog/master/feed.xml)
+[RSS Feed](https://raw.githubusercontent.com/yarbei/yarbei_blog/main/feed.xml)
 ## 友情链接
 | Name | Link | Desc | 
  | ---- | ---- | ---- |
