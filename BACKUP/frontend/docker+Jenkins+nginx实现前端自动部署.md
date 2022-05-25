@@ -24,7 +24,7 @@ description:
 
 找我干运维的好兄弟问一问，好兄弟也对我想做的事情很疑惑
 
-![](https://gitee.com/yarbei/imgcloud/raw/main/202111221456460.png)
+![](https://cdn.yarbei.com/img/202205191107130.png)
 
 所以我稀里糊涂买了服务器但是并没有想好用它来做什么
 
@@ -114,7 +114,7 @@ docker info 					 #显示docker系统信息
 docker 命令 --help  	  #查看命令帮助
 ```
 
-![image-20211124160831155](https://gitee.com/yarbei/imgcloud/raw/main/202111241608226.png)
+![](https://cdn.yarbei.com/img/202205191107131.png)
 
 ## 安装docker-compose
 
@@ -138,7 +138,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose -v
 ```
 
-![image-20211124162432229](https://gitee.com/yarbei/imgcloud/raw/main/202111241624266.png)
+![](https://cdn.yarbei.com/img/202205191107131.png)
 
 ## 安装Nginx和Jenkins镜像
 
@@ -151,7 +151,7 @@ docker pull jenkins/jenkins:lts   #安装Jenkins
 
 安装完成后执行docker images可以查看docker下存在的镜像：
 
-![image-20211128205603982](https://gitee.com/yarbei/imgcloud/raw/main/202111282056024.png)
+![](https://cdn.yarbei.com/img/202205191107140.png)
 
 ## 编写配置目录
 
@@ -234,11 +234,10 @@ docker-compose stop
 
 输入docker ps -a查看容器的运行情况:
 
-![image-20211128213457379](https://gitee.com/yarbei/imgcloud/raw/main/202111282134412.png)
-
+![](https://cdn.yarbei.com/img/202205191107141.png)
 状态显示为up,此时在浏览器地址栏输入服务器公网IP:8080端口可显示Jenkins管理页面：
 
-![image-20211128215149002](https://gitee.com/yarbei/imgcloud/raw/main/202111282151037.png)
+![](https://cdn.yarbei.com/img/202205191107142.png)
 
 如果是第一次进入，需要做一些初始化工作，因为我已经安装过了，就不重新展示初始化的过程了，大概需要以下步骤：
 
@@ -263,11 +262,11 @@ docker-compose stop
 
 点击系统管理->系统配置，全局配置ssh：
 
-![image-20211129170944558](https://gitee.com/yarbei/imgcloud/raw/main/202111291709649.png)
+![](https://cdn.yarbei.com/img/202205191107145.png)
 
 然后到系统管理->全局工具配置，安装nodejs：
 
-![image-20211129171837863](https://gitee.com/yarbei/imgcloud/raw/main/202111291718903.png)
+![](https://cdn.yarbei.com/img/202205191107146.png)
 
 - 注意node版本，有的项目对node版本有要求，可能会出现构建不成功的情况
 
@@ -275,19 +274,19 @@ docker-compose stop
 
 1. 选择新建任务,输入任务名称，构建一个自由风格的软件项目：
 
-![image-20211129173502276](https://gitee.com/yarbei/imgcloud/raw/main/202111291735317.png)
+![](https://cdn.yarbei.com/img/202205191107147.png)
 
 2. 配置源码管理：
 
-![image-20211129174037670](https://gitee.com/yarbei/imgcloud/raw/main/202111291740719.png)
+![](https://cdn.yarbei.com/img/202205191107148.png)
 
 3. 构建触发器配置：
 
-![image-20211129175320749](https://gitee.com/yarbei/imgcloud/raw/main/202111291753792.png)
+![](https://cdn.yarbei.com/img/202205191107149.png)
 
 4. gitee配置webhook：
 
-![image-20211129180115714](https://gitee.com/yarbei/imgcloud/raw/main/202111291801763.png)
+![](https://cdn.yarbei.com/img/202205191107150.png)
 
 - URL为：http://服务器公网IP:8080/generic-webhook-trigger/invoke?token=你的token
 - 选择push触发构建任务
@@ -295,11 +294,11 @@ docker-compose stop
 
 5. 构建环境选择node：
 
-![image-20211129180526312](https://gitee.com/yarbei/imgcloud/raw/main/202111291805361.png)
+![](https://cdn.yarbei.com/img/202205191107151.png)
 
 6. 构建：
 
-![image-20211129180951119](https://gitee.com/yarbei/imgcloud/raw/main/202111291809172.png)
+![](https://cdn.yarbei.com/img/202205191107152.png)
 
 - 增加构建步骤选择执行shell
 
@@ -319,7 +318,7 @@ tar -zcvf public.tar ./public  #压缩生成的静态文件目录
 
 7. 构建后操作：
 
-![image-20211129184358281](https://gitee.com/yarbei/imgcloud/raw/main/202111291843345.png)
+![](https://cdn.yarbei.com/img/202205191107153.png)
 
 - 构建后操作选择send build artifacts over SSH
 - 填写要上传到服务器的文件名称（在构建脚本最后一句：tar -zcvf public.tar ./public）
@@ -336,7 +335,7 @@ rm -rf public.tar  #删除压缩包
 
 至此，基于docker+Jenkins+Nginx实现的前端自动部署功能就实现了
 
-![image-20211129191157217](https://gitee.com/yarbei/imgcloud/raw/main/202111291911270.png)
+![](https://cdn.yarbei.com/img/202205191107154.png)
 
 ## 小结
 
