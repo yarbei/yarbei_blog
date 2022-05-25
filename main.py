@@ -292,9 +292,9 @@ if __name__ == "__main__":
         os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
-    parser.add_argument("repo_name", help="repo_name")
+#     parser.add_argument("repo_name", help="repo_name")
     parser.add_argument(
         "--issue_number", help="issue_number", default=None, required=False
     )
     options = parser.parse_args()
-    main(options.github_token, options.repo_name, options.issue_number)
+    main(options.github_token, REPO_NAME, options.issue_number)
