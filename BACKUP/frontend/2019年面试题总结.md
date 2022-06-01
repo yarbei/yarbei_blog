@@ -1,0 +1,290 @@
+## 2019年面试题总结
+
+---
+
+### abbrlink: 14
+
+### html,css基础面试题
+
+1.盒子模型?怪异盒模型？
+
+> 网页设计中常听的属性名：内容(content)、内边距(padding)、边框(border)、外边距(margin)， CSS盒子模式都具备这些属性.
+
+> 这些属性我们可以用日常生活中的常见事物——盒子作一个比喻来理解，所以叫它盒子模式。
+
+> CSS盒子模型就是在网页设计中经常用到的CSS技术所使用的一种思维模型。
+
+> 在怪异模式下的盒模型，盒子的（content）宽度+内边距padding+边框border宽度=我们设置的width(height也是如此)，盒子总宽度/高度=width/height + margin = 内容区宽度/高度 + padding + border + margin。
+
+> 即box-sizing属性可以指定盒子模型种类，content-box指定盒子模型为W3C（标准盒模型），border-box为IE盒子模型（怪异盒模型）。
+
+2.用css画一个三角形？
+
+> 可以使元素的宽高为0，巧妙运用boder属性来绘制。具体做法不做叙述。
+
+3.div A浮动，B不浮动时是什么情况，A不浮动B浮动又是什么情况？
+
+> (1)B会被A覆盖，拥有float样式的会在上面一层 (2)A独占一行，B在A的下一行的 没有设置position的情况下设置z-index是不起作用的
+
+4.position的默认值，position有几个值
+
+> position的默认值是static，他有五个属性分别是absolute(绝对定位)，relative(相对定位)，fixed(固定定位)，static(没有定位，元素出现在正常的流中)，inherit(从父元素中继承position的值)
+
+5.怎么定义一个动画,怎么设置动画
+
+```css
+@keyframes myanimation
+{
+0%   {background: red;}
+25%  {background: yellow;}
+50%  {background: blue;}
+100% {background: green;}
+}
+div
+{
+animation: myanimation 5s ;
+}
+```
+
+6.less的变量怎么定义，函数怎么写
+
+```css
+//定义变量用@
+//less中的写法
+@ly_width:100px;
+.box {
+    width:@ly_width;
+}
+
+//编译后在css中
+.box{
+    width:100px;
+}
+```
+
+7.jquery获取元素属性
+
+```css
+//获取id为link的a标签的href属性
+
+$("#link").arrt("href")
+```
+
+8.html5的新特性
+
+> 语义化标签，video，audio标签，本地存储，支持canvas,支持websocket等等
+
+9.css3的新特性
+
+> 从新增的文字特效，动画，媒体查询以及新增的关于背景的一些属性，还有背景精灵，边框之类的特性去阐述
+
+### js基础面试题
+
+1.js的数据类型？
+
+> Number，String，Boolean，Null，Undefined，和引用类型Object以及ES6新增的Symbol
+
+2.数组，字符串常用的一些方法？
+
+7.vue的数据传递
+
+> 父组件通过 prop 给子组件下发数据
+
+> 子组件通过事件给父组件发送消息
+
+> vue的事件监听，
+
+8.vue写一个函数参数在哪里定义
+
+> 参数应该在data里面去定义
+
+9.参数带引号和不带引号有啥区别
+
+> 不带引号标识变量 ，带引号是一个值
+
+10.bootstrap的删格化，有多少个格子
+
+> bootstrap栅格是12栅格系统，ant design的布局容器是24栅格系统
+
+11.get请求方式有什么优势？
+
+- get比post更快，因为post请求包含更多的请求头，post在接收数据之前会先将请求头发给服务器进行确认，然后才开始发送数据
+- get会将数据缓存起来，而post不会
+- post不能进行管道化传输
+
+12.get和post有什么区别?
+
+- post更安全（不会作为url的一部分，不会被缓存、保存在服务器日志、以及浏览器浏览记录中）
+- post发送的数据更大（get有url长度限制）
+- post能发送更多的数据类型(get只能发送ASCII字符)
+- post比get慢
+- post用于修改和写入数据，get一般用于搜索排序和筛选之类的操作（淘宝，支付宝的搜索查询都是get提交），目的是资源的获取，读取数据
+
+13.axios和ajax的区别?
+
+- 将jQuery的ajax、axios和fetch做个简单的比较
+- jquery中ajax优缺点：
+   - 本身是针对MVC的编程,不符合现在前端MVVM的浪潮
+   - 基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案
+   - JQuery整个项目太大，单纯使用ajax却要引入整个JQuery非常的不合理（采取个性化打包的方案又不能享受CDN服务）
+- axios优缺点：
+   - 从 node.js 创建 http 请求
+   - 支持 Promise API
+   - 客户端支持防止CSRF
+   - 提供了一些并发请求的接口（重要，方便了很多的操作）
+- fetch优缺点：
+   - 符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+   - 更好更方便的写法
+   - 更加底层，提供的API丰富（request, response）
+   - 脱离了XHR，是ES规范里新的实现方式
+      - fetchtch只对网络请求报错，对400，500都当做成功的请求，需要封装去处理
+      - fetch默认不会带cookie，需要添加配置项
+      - fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了量的浪费
+      - fetch没有办法原生监测请求的进度，而XHR可以
+- 为什么要用axios?
+   - axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
+      - 从浏览器中创建 XMLHttpRequest
+      - 从 node.js 发出 http 请求
+      - 支持 Promise API
+      - 拦截请求和响应
+      - 转换请求和响应数据
+      - 取消请求
+      - 自动转换JSON数据
+      - 客户端支持防止CSRF/XSRF
+
+14.捕获事件流?
+
+> 事件开始阶段，先触发window的事件，再触发body，父元素，子元素，以此类推（先触发最不明确的事件源，最后触发最明确的事件源）
+
+15.销毁组件应该注意什么?
+
+16.在销毁组建时ajax请求还没请求到该怎样?
+
+17.已经销毁了组件，但是ajax请求到数据了又会发生什么?
+
+18.es6数组的新特性
+
+[ES6数组新增方法](https://blog.csdn.net/sinat_39417731/article/details/78491600)
+
+19.nuxt
+
+20.ES6中新增的一个数据类型：symbol
+
+21.浅拷贝深拷贝
+
+> 浅拷贝是对于一个对象的顶层拷贝
+
+> 通俗的理解是：拷贝了引用，并没有拷贝内容
+
+> 深拷贝是对于一个对象所有层次的拷贝(递归)，包括内层和外层 方法如下
+
+```other
+1. JSON对象的parse和stringify方法
+function deepClone(obj){
+    let _obj = JSON.stringify(obj),
+        objClone = JSON.parse(_obj);
+    return objClone
+}
+
+2. 用jQuery的extend方法
+$.extend( [deep ], target, object1 [, objectN ] )
+
+//deep表示是否深拷贝，为true为深拷贝，为false，则为浅拷贝
+
+//target Object类型 目标对象，其他对象的成员属性将被附加到该对象上。
+
+//object1  objectN可选。 Object类型 第一个以及第N个被合并的对象。
+```
+
+22.判断数组的方法
+
+> typeof,instanceof,Object.crototype.call.string()等
+
+24.js实现checkbox全选
+
+```javascript
+window.onload = function (){
+	var all = document.getElementById ("all");			//全选checkbox
+	var box = document.getElementsByClassName('box');	//子复选框
+
+	//遍历checkbox，把子复选框的checked设置成全选框的状态，实现全选/全不选
+	all.onclick = function (){
+		for ( var i = 0; i < box.length; i++){
+			box[i].checked = this.checked;
+		}
+	};
+	//遍历checkbox，子复选框有一个未选中时，如果全选框设为false不选状态
+	for ( var i = 0; i < box.length; i++){
+		box[i].onclick = function (){
+			if ( !this.checked ){
+				all.checked = false;
+			}
+		};
+	}
+}
+```
+
+25.react里的生命周期
+
+> 初始化，运行中，卸载
+
+> [react生命周期详细介绍](https://react.docschina.org/docs/state-and-lifecycle.html)
+
+26.更新数据时ajax应该放在哪个生命周期函数里
+
+> 对于同步的状态改变，是可以放在componentWillMount，对于异步的，最好好放在componentDidMount。但如果此时有若干细节需要处理，比如你的组件需要渲染子组件，而且子组件取决于父组件的某个属性，那么在子组件的componentDidMount中进行处理会有问题：因为此时父组件中对应的属性可能还没有完整获取，因此就让其在子组件的componentDidUpdate中处理。[详情](https://blog.csdn.net/gao449812984/article/details/81055883)
+
+27.nodejs的三个新特性
+
+> Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。
+
+> Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。
+
+28.nodejs适合什么业务场景
+
+- RESTful API
+   - 这是NodeJS最理想的应用场景，可以处理数万条连接，本身没有太多的逻辑，只需要请求API，组织数据进行返回即可。
+
+* 它本质上只是从某个数据库中查找一些值并将它们组成一个响应。
+
+* 由于响应是少量文本，入站请求也是少量的文本，因此流量不高，一台机器甚至也可以处理最繁忙的公司的API需求。
+
+- 统一Web应用的UI层
+   - 目前MVC的架构，在某种意义上来说，Web开发有两个UI层，一个是在浏览器里面我们最终看到的，另一个在server端，负责生成和拼接页面。
+- 大量Ajax请求的应用
+   - 例如个性化应用，每个用户看到的页面都不一样，缓存失效，需要在页面加载的时候发起Ajax请求，
+
+NodeJS能响应大量的并发请求
+
+- 总而言之，NodeJS适合运用在高并发、I/O密集、少量业务逻辑的场景
+
+29.nodejs怎么避免回调地狱
+
+> 用promise解决 [更多详细介绍](https://www.jianshu.com/p/161f1c49ab34)
+
+30.PHP怎么发送请求[php发送http请求的6种方法](https://blog.csdn.net/qq_34827048/article/details/78892700)
+
+31.String和Number是对象吗
+
+> Stringhe和Number都是js中的内置对象[js中的所有内置对象及属性方法](https://www.cnblogs.com/liuluteresa/p/6413988.html)
+
+32.原型链最终的结果是什么?(null)
+
+33.MySQL的优化之类的问题[mysql性能优化总结](https://www.cnblogs.com/luxiaoxun/p/4694144.html)
+
+34.webpack配置?参考[Webpack配置](https://www.webpackjs.com/configuration/)
+
+35.webpack中常用的loader?
+
+- css-loader(将css文件打包到js中)
+- style-loader(动态把样式写入页面style中)
+- sass-loader(编译sass为css)
+- less-loader(编译less为css)
+- postcss-loader(为CSS代码自动添加适应不同浏览器的CSS前缀)
+- babel-loader(编译下一代JavaScript标准、编译JavaScript扩展(JSX))
+- url-loader(按照指定条件将图片转换为Base64编码URL)
+- file-loader(解析项目中的url引入，根据我们的配置，将文件拷贝到相应的路径并修改打包后文件引用路径，使之指向正确引用路径。)
+- thread-loader(可以将非常消耗资源的 loaders 转存到 worker pool 中。)
+
+36.webpack中常用的plugin？[官方plugin列表](https://www.webpackjs.com/plugins/)
+
