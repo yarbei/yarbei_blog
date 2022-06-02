@@ -2,9 +2,7 @@
 
 ---
 
-### abbrlink: 11
-
-面试季马上就要过去了，很多小伙伴也是在努力的抓住金九银十的小尾巴，今天来说一说面试中常见的一个问题：js中如何判断数据类型？
+今天来说一说面试中常见的一个问题：js中如何判断数据类型？
 
 众所周知，JavaScript是一门弱类型的语言，它允许不兼容的类型进行运算，但有些场景使得我们不得不对数据类型做一个规范，如此就需要对数据类型进行判断。
 
@@ -107,7 +105,8 @@ o.toString(); // returns [object Object]
 可以通过 `toString()` 来获取每个对象的类型。为了每个对象都能通过 `Object.prototype.toString()` 来检测，需要以 `Function.prototype.call()` 或者 `Function.prototype.apply()` 的形式来调用，传递要检查的对象作为第一个参数，称为 `thisArg`。
 
 ```javascript
-var toString = Object.prototype.toString;toString.call(333);          // [object Number]
+var toString = Object.prototype.toString;
+toString.call(333);          // [object Number]
 toString.call("aaa");        // [object String]
 toString.call(true);         // [object Boolean]
 toString.call([]);           // [object Array]
@@ -122,16 +121,4 @@ toString.call(Math);         // [object Math]
 ```
 
 相信到这里你已经知道该如何回答面试官的问题了吧
-
-文末彩蛋
-
-大家好，我是亚北，也就是博主各大粉丝群中的小助理，今天心血来潮想写一篇文章给老大来投稿，好吧，其实是她嫌我不思进取？可能吧。于是我翻了几道常见的面试题，最后选择了这道，可能很常见，但是也容易被忽略，比如要不是今天查资料，我就不知道Object.prototype.toString.call()还可以判断Date，Math等js内置对象类型。最后希望大家都可以在面试季中拿到自己心仪公司的offer，人均大厂，年薪百万！
-
-跟着前端Q学前端，大厂始终近你一步！
-
-![1603940156762-679c73b8-9449-438e-a670-30a8c6cd9ac2.png](%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%81JS%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E6%96%AD.assets/1603940156762-679c73b8-9449-438e-a670-30a8c6cd9ac2.png)
-
-![1603940156921-c82759aa-9ffa-4bd1-9c63-ff91dcd4a3fa.png](%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%81JS%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E6%96%AD.assets/1603940156921-c82759aa-9ffa-4bd1-9c63-ff91dcd4a3fa.png)
-
-![1603940156911-1782b310-942b-4e6d-bef6-1da674546504.png](%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%81JS%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E6%96%AD.assets/1603940156911-1782b310-942b-4e6d-bef6-1da674546504.png)
 
