@@ -1,8 +1,8 @@
-## 解决 gyp_ No Xcode or CLT version detected! 错误提示
+# 解决 gyp_ No Xcode or CLT version detected! 错误提示
+
+# 解决 gyp_ No Xcode or CLT version detected! 错误提示
 
 ---
-
-### abbrlink: 4
 
 更新Mac系统后，在用npm安装依赖包的时候总会报这个错误：gyp: No Xcode or CLT version detected!
 
@@ -15,4 +15,3 @@
 - Step1: 输入xcode-select --print-path查看 command-line tools 的安装路径，不出意外显示的结果应该是/Library/Developer/CommandLineTools
 - Step2: 输入sudo rm -r -f /Library/Developer/CommandLineTools把 command-line tools 从系统移除掉
 - Step3: 最后输入xcode-select --install重新安装
-

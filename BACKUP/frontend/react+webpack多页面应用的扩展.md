@@ -1,12 +1,14 @@
-## react+webpack多页面应用的扩展
+# react+webpack多页面应用的扩展
+
+# react+webpack多页面应用的扩展
 
 ---
 
-### abbrlink: 13
+## abbrlink: 13
 
 1. 在config/webpack.config.js里找到entry
 
-![1597647740954-888172e2-123b-4246-82b2-241b05f30b81.png](react+webpack%E5%A4%9A%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8%E7%9A%84%E6%89%A9%E5%B1%95.assets/1597647740954-888172e2-123b-4246-82b2-241b05f30b81.png)
+![1597647740954-888172e2-123b-4246-82b2-241b05f30b81.png](assets/1597647740954-888172e2-123b-4246-82b2-241b05f30b81-20220609215326-7i0t09f.png)
 
 这里面就只是显示index的路径，我们需要再config/paths.js里添加我们几个模块的路径
 
@@ -115,4 +117,3 @@ new HtmlWebpackPlugin(
 如果build后报Cannot read property 'filter' of undefined，那么就需要把
 
 new ManifestPlugin里的generate属性删掉
-

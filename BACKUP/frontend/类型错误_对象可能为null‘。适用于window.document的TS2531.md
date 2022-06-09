@@ -1,4 +1,6 @@
-## 类型错误_对象可能为'null‘。适用于window.document的TS2531
+# 类型错误_对象可能为'null‘。适用于window.document的TS2531
+
+# 类型错误_对象可能为'null‘。适用于window.document的TS2531
 
 第一次将Typescript添加到我的项目中。
 
@@ -27,4 +29,3 @@ if (myMaybeNullElement === null) {   alert('oops'); } else {
   myMaybeNullElement.nodeName // <- no error 
 }
 ```
-

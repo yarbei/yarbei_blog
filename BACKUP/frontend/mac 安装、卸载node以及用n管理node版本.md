@@ -1,8 +1,8 @@
-## mac 安装、卸载node以及用n管理node版本
+# mac 安装、卸载node以及用n管理node版本
+
+# mac 安装、卸载node以及用n管理node版本
 
 ---
-
-### abbrlink: 12
 
 一、安装 nodenode 中文官网下载最新的安装包。
 
@@ -314,4 +314,3 @@ bash: /usr/local/bin/npm: No such file or directory
 ```
 
 至此，node 已经完全卸载掉了。
-

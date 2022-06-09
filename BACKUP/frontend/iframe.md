@@ -1,8 +1,10 @@
-## iframe
+# iframe
+
+# iframe
 
 ---
 
-### abbrlink: 9
+## abbrlink: 9
 
 该元素包含[全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes)。
 
@@ -101,7 +103,7 @@
 
 以CSS像素格式[HTML5](https://developer.mozilla.org/zh-CN/docs/HTML/HTML5)，或以像素格式HTML 4.01，或以百分比格式指定的 frame 的宽度。默认值是300。
 
-#### [不赞成使用的属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E4%B8%8D%E8%B5%9E%E6%88%90%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7)
+### [不赞成使用的属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E4%B8%8D%E8%B5%9E%E6%88%90%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7)
 
 下面这些属性已不赞成使用，并且可能不再被所有的浏览器支持。你应避免在新项目里面使用它们，也应尽量从旧项目中移除它们。
 
@@ -133,7 +135,7 @@
 - yes: 始终显示滚动条。
 - no: 从不显示滚动条。
 
-#### [非标准属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E9%9D%9E%E6%A0%87%E5%87%86%E5%B1%9E%E6%80%A7_non-standard_inline)
+### [非标准属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E9%9D%9E%E6%A0%87%E5%87%86%E5%B1%9E%E6%80%A7_non-standard_inline)
 
 [mozbrowser](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#attr-mozbrowser)** **
 
@@ -141,7 +143,7 @@
 
 这个属性可以让 变得像顶级浏览器窗口，详情请参看 [Browser API](https://developer.mozilla.org/zh-CN/docs/Web/API/Using_the_Browser_API)。这个属性**只能**在 [WebExtensions](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions) 中使用。
 
-### [脚本](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E8%84%9A%E6%9C%AC)
+## [脚本](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E8%84%9A%E6%9C%AC)
 
 内联的框架，就像  元素一样，会被包含在 [window.frames](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/frames) 伪数组（类数组的对象）中。
 
@@ -151,20 +153,19 @@
 
 脚本访问框架内容必须遵守[同源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)，并且无法访问非同源的 window 对象的几乎所有属性。同源策略同样适用于子窗体访问父窗体的 window 对象。跨域通信可以通过 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage) 来实现。
 
-### [定位和缩放](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E5%AE%9A%E4%BD%8D%E5%92%8C%E7%BC%A9%E6%94%BE)
+## [定位和缩放](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E5%AE%9A%E4%BD%8D%E5%92%8C%E7%BC%A9%E6%94%BE)
 
 作为一个[可替换元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element)， 可以使用 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 和 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 来定位、对齐、缩放 元素内的文档。
 
-### [示例](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E7%A4%BA%E4%BE%8B)
+## [示例](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E7%A4%BA%E4%BE%8B)
 
-#### [一个简单的](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#example1)
+### [一个简单的](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#example1)
 
 下面的例子中，我们创建了一个框架。当用户点击框架中的按钮时，浏览器会弹出一个提示框。
 
-##### HTML
+#### HTML
 
 ```
 <p>Your browser does not support iframes.</p> \#### Result ### \[在新标签页中打开里面的链接\](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#example2) 下面的例子演示了在框架中展示谷歌地图。 #### HTML <base target="\_blank"> <iframe id="Example2" title="Example2" width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s\_q&amp;hl=es-419&amp;geocode=&amp;q=buenos+aires&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,80.859375&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Buenos+Aires,+Argentina&amp;z=11&amp;ll=-34.603723,-58.381593&amp;output=embed">  
 [See bigger map](https://maps.google.com/maps?f=q&source=embed&hl=es-419&geocode=&q=buenos+aires&sll=37.0625,-95.677068&sspn=38.638819,80.859375&t=h&ie=UTF8&hq=&hnear=Buenos+Aires,+Argentina&z=11&ll=-34.603723,-58.381593) \#### Result ## \[无障碍环境\](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe#%E6%97%A0%E9%9A%9C%E7%A2%8D%E7%8E%AF%E5%A2%83) 使用 iframe 的 \[title\](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global\_attributes/title) 属性来标识框架的主要内容，这样可以极大方便使用辅助技术（例如屏幕阅读器）浏览网页的人。框架的标题应该清楚地描述框架的内容，例如： Copy to Clipboard 如果没有标题，他们就只能浏览每一个框架来获取需要的内容。这非常耗时间，也很容易让人迷惑，尤其是当页面中包含很多框架或者互动内容如音视频等的时候。
 ```
-

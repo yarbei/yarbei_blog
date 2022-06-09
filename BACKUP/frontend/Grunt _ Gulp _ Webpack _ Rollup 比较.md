@@ -1,8 +1,10 @@
-## Grunt _ Gulp _ Webpack _ Rollup 比较
+# Grunt _ Gulp _ Webpack _ Rollup 比较
+
+# Grunt _ Gulp _ Webpack _ Rollup 比较
 
 ---
 
-### abbrlink: 22
+## abbrlink: 22
 
 Grunt 是一套前端自动化工具，帮助处理反复重复的任务。一般用于：编译，压缩，合并文件，简单语法检查等
 
@@ -26,4 +28,3 @@ Rollup 是下一代 ES6 模块化工具，它最大的亮点是利用 ES6 模块
 - 一般而言，对于应用使用 Webpack，对于类库使用 Rollup；需要代码拆分(Code Splitting)，或者很多静态资源需要处理，再或者构建的项目需要引入很多 CommonJS 模块的依赖时，使用 webpack。代码库是基于 ES6 模块，而且希望代码能够被其他人直接使用，使用 Rollup
 - Rollup 与 Webpack 有这不同的用途，因此会共同存在，并相互支持
 - React 已经将构建工具从 Webpack 换成了 Rollup
-

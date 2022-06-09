@@ -1,4 +1,6 @@
-## Hexo-Theme-Sakura【转】
+# Hexo-Theme-Sakura【转】
+
+# Hexo-Theme-Sakura【转】
 
 ---
 
@@ -19,7 +21,8 @@ tags:
 - web
 - 悦读
 
-### keywords: Sakura
+## keywords: Sakura
+
 description: hexo-sakura主题使用教程
 photos: >- [https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png](https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png) abbrlink: 409956564
 date: 2018-12-12 22:16:01
@@ -34,9 +37,9 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
 
 正在开发中......
 
-![006bYVyvly1g069tuf42oj312w0m8ndq.jpeg](Hexo-Theme-Sakura%E3%80%90%E8%BD%AC%E3%80%91.assets/006bYVyvly1g069tuf42oj312w0m8ndq.jpeg)
+![006bYVyvly1g069tuf42oj312w0m8ndq.jpeg](assets/006bYVyvly1g069tuf42oj312w0m8ndq-20220609215324-cdf4x0k.jpeg)
 
-### 主题特性
+## 主题特性
 
 - 首页大屏视频
 - 首页随机封面
@@ -47,25 +50,25 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
 - aplayer音乐播放器
 - 多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）
 
-### 赞赏作者
+## 赞赏作者
 
 如果喜欢hexo-theme-sakura主题，可以考虑资助一下哦~非常感激！
 
 [paypal](https://www.paypal.me/hojuncn) | [Alipay 支付宝](https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg) | [WeChat Pay 微信支付](https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanSQ.jpg)
 
-### 未完善的使用教程
+## 未完善的使用教程
 
 那啥？老实说我目前也不是很有条理233333333~
 
-### 1、主题下载安装
+## 1、主题下载安装
 
 [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)建议下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦咯。
 
 下载好后解压到博客根目录（不是主题目录哦，重复的选择替换）。接着在命令行（cmd、bash）运行`npm i`安装依赖。
 
-### 2、主题配置
+## 2、主题配置
 
-#### 博客根目录下的_config配置
+### 博客根目录下的_config配置
 
 站点
 
@@ -103,7 +106,7 @@ backup:
     # coding: https://git.coding.net/hojun/hojun.git,backup
 ```
 
-#### 主题目录下的_config配置
+### 主题目录下的_config配置
 
 其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分
 
@@ -231,13 +234,13 @@ v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
 v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
 ```
 
-### 分类页和标签页配置
+## 分类页和标签页配置
 
-#### 分类页
+### 分类页
 
-#### 标签页
+### 标签页
 
-![006bYVyvly1g07azb2399j31040jgazs.jpeg](Hexo-Theme-Sakura%E3%80%90%E8%BD%AC%E3%80%91.assets/006bYVyvly1g07azb2399j31040jgazs.jpeg)
+![006bYVyvly1g07azb2399j31040jgazs.jpeg](assets/006bYVyvly1g07azb2399j31040jgazs-20220609215324-t02m7h7.jpeg)
 
 配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。
 
@@ -263,7 +266,7 @@ v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
     img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg
 ```
 
-### 单页面封面配置
+## 单页面封面配置
 
 如留言板页面页面，位于source下的comment下，打开index.md如下：
 
@@ -279,11 +282,11 @@ photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
 ---
 ```
 
-### 单页面配置
+## 单页面配置
 
-#### 番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）
+### 番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）
 
-![006bYVyvly1g07b2gyx60j31090jjahj.jpeg](Hexo-Theme-Sakura%E3%80%90%E8%BD%AC%E3%80%91.assets/006bYVyvly1g07b2gyx60j31090jjahj.jpeg)
+![006bYVyvly1g07b2gyx60j31090jjahj.jpeg](assets/006bYVyvly1g07b2gyx60j31090jjahj-20220609215325-jsbaqsm.jpeg)
 
 ```other
 ---
@@ -318,7 +321,7 @@ bangumis:
 ---
 ```
 
-#### 友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）
+### 友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）
 
 ```other
 ---
@@ -367,7 +370,7 @@ links:
 ---
 ```
 
-### 写文章配置
+## 写文章配置
 
 主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：
 
@@ -385,7 +388,6 @@ hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下�
 
 详细使用教程详见[hexo-tag-fancybox_img](https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md)
 
-### 还有啥，一时想不起来......
+## 还有啥，一时想不起来......
 
 To be continued...
-

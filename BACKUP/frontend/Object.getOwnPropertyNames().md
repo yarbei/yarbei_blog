@@ -1,30 +1,32 @@
-## Object.getOwnPropertyNames()
+# Object.getOwnPropertyNames()
+
+# Object.getOwnPropertyNames()
 
 ---
 
-### abbrlink: 6
+## abbrlink: 6
 
 **`Object.getOwnPropertyNames()`**方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
 
-### [语法](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Syntax)
+## [语法](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Syntax)
 
 Object.getOwnPropertyNames(*obj*)
 
-### [参数](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E5%8F%82%E6%95%B0)
+## [参数](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E5%8F%82%E6%95%B0)
 
 `obj`一个对象，其自身的可枚举和不可枚举属性的名称被返回。
 
-### [返回值](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E8%BF%94%E5%9B%9E%E5%80%BC)
+## [返回值](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E8%BF%94%E5%9B%9E%E5%80%BC)
 
 在给定对象上找到的自身属性对应的字符串数组。
 
-### [描述](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Description)
+## [描述](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Description)
 
 `Object.getOwnPropertyNames()` 返回一个数组，该数组对元素是 `obj`自身拥有的枚举或不可枚举属性名称字符串。 数组中枚举属性的顺序与通过 [`for...in`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in) 循环（或 [`Object.keys`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)）迭代该对象属性时一致。数组中不可枚举属性的顺序未定义。
 
-### [示例](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E7%A4%BA%E4%BE%8B)
+## [示例](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E7%A4%BA%E4%BE%8B)
 
-#### [使用 Object.getOwnPropertyNames()](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E4%BD%BF%E7%94%A8_Object.getOwnPropertyNames)
+### [使用 Object.getOwnPropertyNames()](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E4%BD%BF%E7%94%A8_Object.getOwnPropertyNames)
 
 ```other
 var arr = ["a", "b", "c"];
@@ -71,7 +73,7 @@ console.log(
 );
 ```
 
-#### [只获取不可枚举的属性](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E5%8F%AA%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%8F%AF%E6%9E%9A%E4%B8%BE%E7%9A%84%E5%B1%9E%E6%80%A7)
+### [只获取不可枚举的属性](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#%E5%8F%AA%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%8F%AF%E6%9E%9A%E4%B8%BE%E7%9A%84%E5%B1%9E%E6%80%A7)
 
 下面的例子使用了 [`Array.prototype.filter()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 方法，从所有的属性名数组（使用`Object.getOwnPropertyNames()`方法获得）中去除可枚举的属性（使用[`Object.keys()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)方法获得），剩余的属性便是不可枚举的属性了：
 
@@ -94,7 +96,7 @@ console.log(nonenum_only);
 
 注：[Array.filter(filt_func)方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。
 
-### [提示](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Notes)
+## [提示](https://developer.mozilla.org/zh-cn/docs/web/javascript/reference/global_objects/object/getownpropertynames#Notes)
 
 在 ES5 中，如果参数不是一个原始对象类型，将抛出一个 [`TypeError`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError)  异常。在 ES2015 中，非对象参数被强制转换为对象 **。**
 
@@ -104,4 +106,3 @@ Object.getOwnPropertyNames('foo');
 Object.getOwnPropertyNames('foo');
 // ['length', '0', '1', '2']  (ES2015 code)
 ```
-

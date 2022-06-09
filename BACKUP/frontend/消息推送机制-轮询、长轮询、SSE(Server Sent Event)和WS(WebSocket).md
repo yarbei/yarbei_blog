@@ -1,8 +1,10 @@
-## 消息推送机制-轮询、长轮询、SSE(Server Sent Event)和WS(WebSocket)
+# 消息推送机制-轮询、长轮询、SSE(Server Sent Event)和WS(WebSocket)
+
+# 消息推送机制-轮询、长轮询、SSE(Server Sent Event)和WS(WebSocket)
 
 ---
 
-### abbrlink: 24
+## abbrlink: 24
 
 1. 轮询-数据拉取
 
@@ -184,4 +186,3 @@ wss.on("connection", function (ws) {
     });
 });
 ```
-

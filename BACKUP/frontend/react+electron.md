@@ -1,8 +1,8 @@
-## react+electron
+# react+electron
+
+# react+electron
 
 ---
-
-### abbrlink: 19
 
 经过简单了解，觉得electron这个框架不错，我们看他的首页介绍：
 
@@ -65,7 +65,7 @@ app.on('activate', () => {
 
 需要注意的是这里：
 
-![1597905360044-118ba170-c57d-4fc3-a8e5-a470b851e3bb.png](react+electron.assets/1597905360044-118ba170-c57d-4fc3-a8e5-a470b851e3bb.png)
+![1597905360044-118ba170-c57d-4fc3-a8e5-a470b851e3bb.png](assets/1597905360044-118ba170-c57d-4fc3-a8e5-a470b851e3bb-20220609215326-b9y5k6h.png)
 
 第一处的配置在官网提供的main.js里是没有的，这里不要忘了加，要不然会提示找不到node的错误。
 
@@ -109,7 +109,7 @@ app.on('activate', () => {
 
 本以为大功告成，但是没想到我npm run start启动的时候,页面仍是一片空白，这是怎么回事呢？打开控制台看看有没有报错：
 
-![1597906021292-d179df1a-98a7-49c6-966b-64d11a9a15cc.png](react+electron.assets/1597906021292-d179df1a-98a7-49c6-966b-64d11a9a15cc.png)
+![1597906021292-d179df1a-98a7-49c6-966b-64d11a9a15cc.png](assets/1597906021292-d179df1a-98a7-49c6-966b-64d11a9a15cc-20220609215326-lww5a9j.png)
 
 果然，是找不到资源所在位置所导致的。原来，webpack在打包的时候，默认情况下，homepage是http://localhost:3000，build后，所有资源文件路径都是/static，而Electron调用的入口是file:协议，/static就会定位到根目录去，所以找不到静态文件。在package.json文件中添加homepage字段并设置为"."后，静态文件的路径就变成了相对路径，就能正确地找到了。
 
@@ -144,7 +144,7 @@ win.loadURL('http://localhost:3000')
 
 首先要确定main.js文件中的webSecurity的值为false，设置webPreferences中的webSecurity为false，就禁用掉了浏览器的跨域安全特性（同源策略）了。
 
-![1597906021331-a7b94bf4-00cf-417c-92c1-90b5a5ca569d.png](react+electron.assets/1597906021331-a7b94bf4-00cf-417c-92c1-90b5a5ca569d.png)
+![1597906021331-a7b94bf4-00cf-417c-92c1-90b5a5ca569d.png](assets/1597906021331-a7b94bf4-00cf-417c-92c1-90b5a5ca569d-20220609215326-3dbqh7u.png)
 
 接着我们在接口处理的函数里面统一处理接口请求,将完整域名拼接在通过调用fetchRequest传进来的url上面，这里是一个简单的封装过的fetch请求函数：
 
@@ -189,7 +189,7 @@ npm run eject
 
 如果你运行了之后报如下错误：
 
-![1597906538091-78689216-fc7d-48e9-95d0-48ff316469b6.png](react+electron.assets/1597906538091-78689216-fc7d-48e9-95d0-48ff316469b6.png)
+![1597906538091-78689216-fc7d-48e9-95d0-48ff316469b6.png](assets/1597906538091-78689216-fc7d-48e9-95d0-48ff316469b6-20220609215326-pregke8.png)
 
 这是因为我们使用脚手架创建一个项目的时候，自动给我们增加了一个.gitignore文件，但是我们本地却没有文件仓库。需要在终端输入如下命令：
 
@@ -201,7 +201,7 @@ git add .git commit -am "Save before ejecting"
 
 然后项目下会多出两个文件夹，config和scripts，我们开发中一般只需关心config文件下的webpack.config.js，paths.js，webpackDevServer.config.js，其他多出来的文件不要管他。下面就是config/webpack.config.js里entry的代码：
 
-![1597906538123-7c8f64ef-87a6-4ed0-9ad0-f8cdebe2ba6a.png](react+electron.assets/1597906538123-7c8f64ef-87a6-4ed0-9ad0-f8cdebe2ba6a.png)
+![1597906538123-7c8f64ef-87a6-4ed0-9ad0-f8cdebe2ba6a.png](assets/1597906538123-7c8f64ef-87a6-4ed0-9ad0-f8cdebe2ba6a-20220609215326-gi3a7ja.png)
 
 这里面就只是显示index的路径，我们需要在config/paths.js里添加我们几个模块的路径：
 
@@ -251,5 +251,4 @@ new HtmlWebpackPlugin(        Object.assign(          {},          {            
 
 经过几天的更新，目前算是较为完整的实现了将一个基于react的web应用利用electron变成了一个桌面应用。中间也包含了很多由此引出的问题以及解决思路，当然也存在还没有搞明白的问题，技术略菜，欢迎各位前端小伙伴一起探讨...
 
-![1597906538014-2633faaa-a4b3-4aaa-b189-0b72df20b69b.gif](react+electron.assets/1597906538014-2633faaa-a4b3-4aaa-b189-0b72df20b69b.gif)
-
+![1597906538014-2633faaa-a4b3-4aaa-b189-0b72df20b69b.gif](assets/1597906538014-2633faaa-a4b3-4aaa-b189-0b72df20b69b-20220609215326-jdemwiu.gif)

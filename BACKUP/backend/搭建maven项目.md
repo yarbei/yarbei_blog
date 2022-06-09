@@ -1,10 +1,13 @@
-## 搭建maven项目
+# 搭建maven项目
+
+# 搭建maven项目
 
 ---
 
-### abbrlink: 2
+## abbrlink: 2
 
 > controller一般都是对接前端的 每个方法上都有一个路径  比如说删除接口  方法上就会来个@RequestMapping("/delete")，把这个接口暴露出来；service是服务类；mapper是最后一层，和数据库连接，用于获取数据；entity包 就是当我们写新增或者修改sql的时候 一般用这个实体类，或者用于接收前端的参数；
+>
 
 1.安装maven
 
@@ -12,11 +15,11 @@
 
 2.创建maven项目，勾选create from archetype，选择maven_archetype-quickstart
 
-![1601612705832-c55defa6-40cb-4ad0-aa7b-11156ac687b3.png](%E6%90%AD%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE.assets/1601612705832-c55defa6-40cb-4ad0-aa7b-11156ac687b3.png)
+![1601612705832-c55defa6-40cb-4ad0-aa7b-11156ac687b3.png](assets/1601612705832-c55defa6-40cb-4ad0-aa7b-11156ac687b3-20220609215324-4849qx0.png)
 
 3.选择覆盖maven的settings.xml，选择maven下载的包的位置
 
-![1601612757155-3d9cb5a2-7bdf-4960-ac98-bc2c9d982851.png](%E6%90%AD%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE.assets/1601612757155-3d9cb5a2-7bdf-4960-ac98-bc2c9d982851.png)
+![1601612757155-3d9cb5a2-7bdf-4960-ac98-bc2c9d982851.png](assets/1601612757155-3d9cb5a2-7bdf-4960-ac98-bc2c9d982851-20220609215324-w1mdy0s.png)
 
 4.创建好maven项目，修改pom.xml，替换依赖
 
@@ -294,4 +297,3 @@ public class StudentServiceImpls implements StudentService {
 
 </mapper>
 ```
-

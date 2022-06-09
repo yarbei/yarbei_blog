@@ -1,4 +1,6 @@
-## 查漏补缺！JS中数据类型的判断
+# JS中数据类型的判断
+
+# JS中数据类型的判断
 
 ---
 
@@ -15,10 +17,11 @@
 在此引用MDN的说明：
 
 > typeof 操作符返回一个字符串，表示未经计算的操作数的类型。
+>
 
 下表总结了 `typeof` 可能的返回值：
 
-![1603940156778-82be9fbe-9891-47d4-ac3f-853a3243df22.png](%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%81JS%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E6%96%AD.assets/1603940156778-82be9fbe-9891-47d4-ac3f-853a3243df22.png)
+![1603940156778-82be9fbe-9891-47d4-ac3f-853a3243df22.png](assets/1603940156778-82be9fbe-9891-47d4-ac3f-853a3243df22-20220609215325-h66ios1.png)
 
 示例：
 
@@ -63,6 +66,7 @@ class newClass{};
 依然引用MDN的说明：
 
 > instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+>
 
 示例：
 
@@ -81,7 +85,7 @@ console.log({} instanceof Object);                   // true
 
 到这里大家可能已经观察到了，为什么我在上面的示例中没有用instanceof来判断null和undefined，我们在浏览器中输出一下看是什么结果：
 
-![1603940156896-0d0014a2-0b0f-4287-9c3b-613459a53545.png](%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%81JS%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%A4%E6%96%AD.assets/1603940156896-0d0014a2-0b0f-4287-9c3b-613459a53545.png)
+![1603940156896-0d0014a2-0b0f-4287-9c3b-613459a53545.png](assets/1603940156896-0d0014a2-0b0f-4287-9c3b-613459a53545-20220609215325-9tjl1g9.png)
 
 浏览器在这里报错了，它认为null，undefined不是构造器。
 
@@ -94,6 +98,7 @@ Object.prototype.toString.call()
 MDN中说明：
 
 > toString() 方法返回一个表示该对象的字符串。
+>
 
 每个对象都有一个 `toString()` 方法，当该对象被表示为一个文本值时，或者一个对象以预期的字符串方式引用时自动调用。默认情况下，`toString()` 方法被每个 `Object` 对象继承。如果此方法在自定义对象中未被覆盖，`toString()` 返回 "[object *type*]"，其中 `type` 是对象的类型。以下代码说明了这一点：
 
@@ -105,8 +110,7 @@ o.toString(); // returns [object Object]
 可以通过 `toString()` 来获取每个对象的类型。为了每个对象都能通过 `Object.prototype.toString()` 来检测，需要以 `Function.prototype.call()` 或者 `Function.prototype.apply()` 的形式来调用，传递要检查的对象作为第一个参数，称为 `thisArg`。
 
 ```javascript
-var toString = Object.prototype.toString;
-toString.call(333);          // [object Number]
+var toString = Object.prototype.toString;toString.call(333);          // [object Number]
 toString.call("aaa");        // [object String]
 toString.call(true);         // [object Boolean]
 toString.call([]);           // [object Array]
@@ -121,4 +125,3 @@ toString.call(Math);         // [object Math]
 ```
 
 相信到这里你已经知道该如何回答面试官的问题了吧
-

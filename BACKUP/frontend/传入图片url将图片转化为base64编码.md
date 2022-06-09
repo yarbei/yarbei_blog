@@ -1,8 +1,10 @@
-## 传入图片url将图片转化为base64编码
+# 传入图片url将图片转化为base64编码
+
+# 传入图片url将图片转化为base64编码
 
 ---
 
-### abbrlink: 8
+## abbrlink: 8
 
 [*https://blog.csdn.net/myf8520/article/details/107340712/*](https://blog.csdn.net/myf8520/article/details/107340712/)
 
@@ -27,4 +29,3 @@ convertImgToBase64=(url, callback, outputFormat)=>{
         img.src = url;
     }
 ```
-

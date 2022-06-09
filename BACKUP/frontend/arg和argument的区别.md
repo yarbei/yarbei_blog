@@ -1,8 +1,10 @@
-## arg和argument的区别
+# arg和argument的区别
+
+# arg和argument的区别
 
 ---
 
-### abbrlink: 25
+## abbrlink: 25
 
 …args剩余参数(展开运算符)
 
@@ -236,12 +238,14 @@ doAdd(40, 20);	//输出 "60"
 ​
 
 > 1.剩余参数只包含那些没有对应形参的实参，而 arguments 对象包含了传给函数的所有实参。
+>
 
 > 2.arguments对象不是一个真正的数组，而剩余参数是真正的 Array实例，也就是说你能够在它上面直接使用所有的数组方法，比如 sort，map，forEach或pop。
+>
 
 > 3.arguments对象还有一些附加的属性 （如callee属性）。
+>
 
 [
 
 ]([https://blog.csdn.net/YauCheun/article/details/100396280](https://blog.csdn.net/YauCheun/article/details/100396280))
-

@@ -1,8 +1,10 @@
-## 前端鉴权的兄弟们：cookie、session、token、jwt、单点登录
+# 前端鉴权的兄弟们：cookie、session、token、jwt、单点登录
+
+# 前端鉴权的兄弟们：cookie、session、token、jwt、单点登录
 
 ---
 
-### abbrlink: 26
+## abbrlink: 26
 
 本文你将看到：
 
@@ -17,7 +19,7 @@
 
 ---
 
-### 从状态说起
+## 从状态说起
 
 **HTTP 无状态**
 
@@ -48,7 +50,7 @@
 
 ---
 
-### 基石：cookie
+## 基石：cookie
 
 可是前端好麻烦啊，又要自己存，又要想办法带出去，有没有不用操心的？
 
@@ -139,7 +141,7 @@ console.log(document.cookie); // username=jimu; height=180; weight=80
 
 ---
 
-### 应用方案：服务端 session
+## 应用方案：服务端 session
 
 现在回想下，你刷卡的时候发生了什么？
 
@@ -149,7 +151,7 @@ console.log(document.cookie); // username=jimu; height=180; weight=80
 
 典型的 session 登陆/验证流程：
 
-![1630398428423-8157b596-ee6e-4ac8-a50f-2ce5659343e2.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398428423-8157b596-ee6e-4ac8-a50f-2ce5659343e2.png)
+![1630398428423-8157b596-ee6e-4ac8-a50f-2ce5659343e2.png](assets/1630398428423-8157b596-ee6e-4ac8-a50f-2ce5659343e2-20220609215326-c9nb7wo.png)
 
 - 浏览器登录发送账号密码，服务端查用户库，校验用户
 - 服务端把用户登录状态存为 Session，生成一个 sessionId
@@ -187,7 +189,7 @@ console.log(document.cookie); // username=jimu; height=180; weight=80
 
 这是它种的 cookie：
 
-![1630398428183-1d6d5614-4266-4520-b3ae-631f5d829de0.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398428183-1d6d5614-4266-4520-b3ae-631f5d829de0.png)
+![1630398428183-1d6d5614-4266-4520-b3ae-631f5d829de0.png](assets/1630398428183-1d6d5614-4266-4520-b3ae-631f5d829de0-20220609215326-0uvq7lt.png)
 
 [express-session  -  npm](https://link.zhihu.com/?target=https%3A//www.npmjs.com/package/express-session) 主要实现了：
 
@@ -197,7 +199,7 @@ console.log(document.cookie); // username=jimu; height=180; weight=80
 
 ---
 
-### 应用方案：token
+## 应用方案：token
 
 session 的维护给服务端造成很大困扰，我们必须找地方存放它，又要考虑分布式的问题，甚至要单独为了它启用一套 Redis 集群。有没有更好的办法？
 
@@ -209,7 +211,7 @@ session 的维护给服务端造成很大困扰，我们必须找地方存放它
 
 这种方式通常被叫做 token。
 
-![1630398428253-125c7da5-50be-4ae2-aa46-64ac7b0c01fe.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398428253-125c7da5-50be-4ae2-aa46-64ac7b0c01fe.png)
+![1630398428253-125c7da5-50be-4ae2-aa46-64ac7b0c01fe.png](assets/1630398428253-125c7da5-50be-4ae2-aa46-64ac7b0c01fe-20220609215326-63jlwpo.png)
 
 token 的流程是这样的：
 
@@ -226,7 +228,7 @@ token 的流程是这样的：
 
 那我们如何控制 token 的有效期呢？很简单，把「过期时间」和数据一起塞进去，验证时判断就好。
 
-### token 的编码
+## token 的编码
 
 编码的方式丰俭由人。
 
@@ -238,7 +240,7 @@ token 的流程是这样的：
 
 默认配置下，当我给他一个 userid，他会存成这样：
 
-![1630398428175-d9e1009b-ccd5-4132-9be5-935405295a7e.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398428175-d9e1009b-ccd5-4132-9be5-935405295a7e.png)
+![1630398428175-d9e1009b-ccd5-4132-9be5-935405295a7e.png](assets/1630398428175-d9e1009b-ccd5-4132-9be5-935405295a7e-20220609215326-54jll2p.png)
 
 这里的 eyJ1c2VyaWQiOiJhIn0=，就是 {"userid":"abb”} 的 base64 而已。
 
@@ -254,7 +256,7 @@ secret: 'iAmSecret', signed: true,
 
 这样会多种一个 .sig cookie，里面的值就是 {"userid":"abb”} 和 iAmSecret通过加密算法计算出来的，常见的比如[HMACSHA256 类 (System.Security.Cryptography) | Microsoft Docs](https://link.zhihu.com/?target=https%3A//docs.microsoft.com/zh-cn/dotnet/api/system.security.cryptography.hmacsha256%3Fredirectedfrom%3DMSDN%26view%3Dnetframework-4.8)。
 
-![1630398428133-ceba174f-bf18-4f71-a38d-e6c2a18563d2.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398428133-ceba174f-bf18-4f71-a38d-e6c2a18563d2.png)
+![1630398428133-ceba174f-bf18-4f71-a38d-e6c2a18563d2.png](assets/1630398428133-ceba174f-bf18-4f71-a38d-e6c2a18563d2-20220609215326-qe36rfd.png)
 
 好了，现在 cdd 虽然能伪造出eyJ1c2VyaWQiOiJhIn0=，但伪造不出 sig 的内容，因为他不知道 secret。
 
@@ -270,13 +272,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJhIiwiaWF0IjoxNTUxOTUxOTk4fQ.
 
 这串东西是怎么生成的呢？看图：
 
-![1630398429918-1a53e91d-d56c-416d-8056-5a529549da7a.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398429918-1a53e91d-d56c-416d-8056-5a529549da7a.png)
+![1630398429918-1a53e91d-d56c-416d-8056-5a529549da7a.png](assets/1630398429918-1a53e91d-d56c-416d-8056-5a529549da7a-20220609215326-30wakxg.png)
 
 类型、加密算法的选项，以及 JWT 标准数据字段，可以参考 [RFC 7519 - JSON Web Token (JWT)](https://link.zhihu.com/?target=https%3A//tools.ietf.org/html/rfc7519%23section-4.1)
 
 node 上同样有相关的库实现：[express-jwt  -  npm](https://link.zhihu.com/?target=https%3A//www.npmjs.com/package/express-jwt)[koa-jwt  -  npm](https://link.zhihu.com/?target=https%3A//www.npmjs.com/package/koa-jwt)
 
-### refresh token
+## refresh token
 
 token，作为权限守护者，最重要的就是「安全」。
 
@@ -291,11 +293,11 @@ token，作为权限守护者，最重要的就是「安全」。
 
 有了 refresh token 后，几种情况的请求流程变成这样：
 
-![1630398430239-a1685d7c-6509-4e1c-95a8-82b50c5655a8.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398430239-a1685d7c-6509-4e1c-95a8-82b50c5655a8.png)
+![1630398430239-a1685d7c-6509-4e1c-95a8-82b50c5655a8.png](assets/1630398430239-a1685d7c-6509-4e1c-95a8-82b50c5655a8-20220609215326-i0gfl18.png)
 
 如果 refresh token 也过期了，就只能重新登录了。
 
-### session 和 token
+## session 和 token
 
 session 和 token 都是边界很模糊的概念，就像前面说的，refresh token 也可能以 session 的形式组织维护。
 
@@ -317,19 +319,19 @@ session 和 token 都是边界很模糊的概念，就像前面说的，refresh 
 
 ---
 
-### 单点登录
+## 单点登录
 
 前面我们已经知道了，在同域下的客户端/服务端认证系统中，通过客户端携带凭证，维持一段时间内的登录状态。
 
 但当我们业务线越来越多，就会有更多业务系统分散到不同域名下，就需要「一次登录，全线通用」的能力，叫做「单点登录」。
 
-### “虚假”的单点登录（一级域名相同）
+## “虚假”的单点登录（一级域名相同）
 
 简单的，如果业务系统都在同一一级域名下，[比如wenku.baidu.comtieba.baidu.com](http://xn--wenku-gv5ij80i.baidu.comtieba.baidu.com)，就好办了。可以直接把 cookie domain 设置为一级域名 [baidu.com](http://baidu.com)，百度也就是这么干的。
 
-![1630398429706-6ebc7459-e574-4027-82d1-92b5a8cc74e7.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398429706-6ebc7459-e574-4027-82d1-92b5a8cc74e7.png)
+![1630398429706-6ebc7459-e574-4027-82d1-92b5a8cc74e7.png](assets/1630398429706-6ebc7459-e574-4027-82d1-92b5a8cc74e7-20220609215326-sca7egh.png)
 
-### “真实”的单点登录（一级域名不同）
+## “真实”的单点登录（一级域名不同）
 
 比如滴滴这么潮的公司，同时拥有didichuxing.comxiaojukeji.comdidiglobal.com等域名，种 cookie 是完全绕不开的。
 
@@ -339,7 +341,7 @@ session 和 token 都是边界很模糊的概念，就像前面说的，refresh 
 
 **一次「从 A 系统引发登录，到 B 系统不用登录」的完整流程**
 
-![1630398430466-ca2d9665-706b-4346-9415-c62a6083c05f.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398430466-ca2d9665-706b-4346-9415-c62a6083c05f.png)
+![1630398430466-ca2d9665-706b-4346-9415-c62a6083c05f.png](assets/1630398430466-ca2d9665-706b-4346-9415-c62a6083c05f-20220609215326-mo4y5cj.png)
 
 - 用户进入 A 系统，没有登录凭证（ticket），A 系统给他跳到 SSO
 - SSO 没登录过，也就没有 sso 系统下没有凭证（注意这个和前面 A ticket 是两回事），输入账号密码登录
@@ -356,13 +358,13 @@ session 和 token 都是边界很模糊的概念，就像前面说的，refresh 
 
 看这里：
 
-![1630398429801-90517882-c024-4e8e-a02f-66ae7e486c8c.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398429801-90517882-c024-4e8e-a02f-66ae7e486c8c.png)
+![1630398429801-90517882-c024-4e8e-a02f-66ae7e486c8c.png](assets/1630398429801-90517882-c024-4e8e-a02f-66ae7e486c8c-20220609215326-isaxofu.png)
 
 对浏览器来说，SSO 域下返回的数据要怎么存，才能在访问 A 的时候带上？浏览器对跨域有严格限制，cookie、localStorage 等方式都是有域限制的。
 
 这就需要也只能由 A 提供 A 域下存储凭证的能力。一般我们是这么做的：
 
-![1630398431198-f7d48dcc-6378-4ccc-94b8-e8b16b68ed13.png](%E5%89%8D%E7%AB%AF%E9%89%B4%E6%9D%83%E7%9A%84%E5%85%84%E5%BC%9F%E4%BB%AC%EF%BC%9Acookie%E3%80%81session%E3%80%81token%E3%80%81jwt%E3%80%81%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95.assets/1630398431198-f7d48dcc-6378-4ccc-94b8-e8b16b68ed13.png)
+![1630398431198-f7d48dcc-6378-4ccc-94b8-e8b16b68ed13.png](assets/1630398431198-f7d48dcc-6378-4ccc-94b8-e8b16b68ed13-20220609215326-nlh3oeg.png)
 
 图中我们通过颜色把浏览器当前所处的域名标记出来。注意图中灰底文字说明部分的变化。
 
@@ -375,7 +377,7 @@ session 和 token 都是边界很模糊的概念，就像前面说的，refresh 
 
 ---
 
-### 总结
+## 总结
 
 - HTTP 是无状态的，为了维持前后请求，需要前端存储标记
 - cookie 是一种完善的标记方式，通过 HTTP 头或 js 操作，有对应的安全策略，是大多数状态管理方案的基石
@@ -385,4 +387,3 @@ session 和 token 都是边界很模糊的概念，就像前面说的，refresh 
 - 在复杂系统中，token 可通过 service token、refresh token 的分权，同时满足安全性和用户体验
 - session 和 token 的对比就是「用不用cookie」和「后端存不存」的对比
 - 单点登录要求不同域下的系统「一次登录，全线通用」，通常由独立的 SSO 系统记录登录状态、下发 ticket，各业务系统配合存储和认证 ticket
-

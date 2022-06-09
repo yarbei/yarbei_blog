@@ -1,6 +1,8 @@
-## npm更新报错问题
+# npm更新报错问题
 
-## npm更新遇到报错问题
+# npm更新报错问题
+
+# npm更新遇到报错问题
 
 npm提示更新，如下：
 
@@ -43,4 +45,3 @@ npm ERR! the command again as root/Administrator.
 # 在命令前加上sudo就好了
 sudo npm install -g npm
 ```
-

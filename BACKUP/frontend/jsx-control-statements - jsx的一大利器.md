@@ -1,6 +1,8 @@
-## jsx-control-statements - jsx的一大利器
+# jsx-control-statements - jsx的一大利器
 
-### 一、为什么如此难受🤔
+# jsx-control-statements - jsx的一大利器
+
+## 一、为什么如此难受🤔
 
 在我们去写 JSX 的时候，有时候一直在感叹为什么在 JSX 里面写不了条件语句，举个栗子🌰（为什么都举我）：
 
@@ -22,7 +24,7 @@ render () {
 
 但是！这样写是不合法的，JSX 识别不了。在 JSX 中我们只能去写表达式，这种情况下我们就只能三元表达式去替代咯。
 
-### 二、用什么去增强jsx呢？
+## 二、用什么去增强jsx呢？
 
 JSX-Control-Statements 是一个Babel插件，它扩展了 JSX 以添加基本控制语句：条件和循环。
 
@@ -34,7 +36,7 @@ JSX-Control-Statements 是一个Babel插件，它扩展了 JSX 以添加基本�
 
 唯一依赖 JSX-Control-Statements 依赖的是 Babel 。它与React和React Native兼容。
 
-### 三、安装
+## 三、安装
 
 PS：因为它是 Babel 的一个插件，所以我们在使用它的时候要先检查是否安装了babel
 
@@ -62,9 +64,9 @@ npm install --save-dev babel-plugin-jsx-control-statements
 }
 ```
 
-### 四、语法
+## 四、语法
 
-#### IF标签
+### IF标签
 
 用于表示最简单的条件逻辑。
 
@@ -79,7 +81,7 @@ npm install --save-dev babel-plugin-jsx-control-statements
 
 PS：不要使用 ,因为它已经被废弃了。
 
-#### Choose标签
+### Choose标签
 
 这是更高级的一种写法。
 
@@ -109,7 +111,7 @@ PS：不要使用 ,因为它已经被废弃了。
 
 都不满足则渲染这个。
 
-#### For标签
+### For标签
 
 ```javascript
 // 注意，这里面我们不要忘记key属性！！！ 
@@ -123,7 +125,7 @@ PS：不要使用 ,因为它已经被废弃了。
 </For>
 ```
 
-#### With标签
+### With标签
 
 用于为局部变量赋值。
 
@@ -147,7 +149,7 @@ PS：不要使用 ,因为它已经被废弃了。
 }
 ```
 
-### 五、主要版本
+## 五、主要版本
 
 - 4.xx是一个纯Babel插件，支持Babel >= 7。
 - 3.xx是一个支持Babel >= 6的纯Babel插件。
@@ -156,7 +158,6 @@ PS：不要使用 ,因为它已经被废弃了。
 
 这曾经支持JSTransform和Babel，但由于不再维护JSTransform，所以不再支持它。你可以在 [github.com/alexgillera…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Falexgilleran%2Fjsx-control-statements-jsttransform) 上找到JSTransform版本的代码。
 
-### 六、最后说一点
+## 六、最后说一点
 
 在我看来，这个插件会大大加大编译打包的时间以及代码量，如果没有特殊需求，可以不去使用这个🤗🤗🤗🤗。
-

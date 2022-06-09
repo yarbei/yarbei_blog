@@ -1,4 +1,6 @@
-## Mac下MySql无法启动的原因
+# Mac下MySql无法启动的原因
+
+# Mac下MySql无法启动的原因
 
 由于很长时间没有使用MySql，今天想启动一下发现启动不了，输入MySql启动命令报错。
 
@@ -34,4 +36,3 @@ Starting MySQL
 ```
 
 成功了！
-

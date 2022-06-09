@@ -1,14 +1,16 @@
-## js获取上传音视频的时长
+# js获取上传音视频的时长
+
+# js获取上传音视频的时长
 
 ---
 
-### abbrlink: 23
+## abbrlink: 23
 
 获取上传视频路径，将该路径放入video标签，获取视频时长
 
 ​
 
-### 方式一：隐藏一个音频标签，播放获取。
+## 方式一：隐藏一个音频标签，播放获取。
 
 ```javascript
 <video style="display:none;" controls="controls" id="videoData" oncanplaythrough="geTime(this)"></video>
@@ -33,7 +35,7 @@ function changeFile(ele){
 
 ​
 
-### 方式二;通过new Audio的方式获取：
+## 方式二;通过new Audio的方式获取：
 
 ```javascript
 <input type="file" onchange="changeFile(this)" >
@@ -59,7 +61,7 @@ function changeFile(ele){
 
 ​
 
-### 上传之前限制一下视频的时长
+## 上传之前限制一下视频的时长
 
 由于用阿里云解析视频的时候，是按照视频时长收费的，为了节省测试费用，老板要我在上传之前限制一下视频的时长！这里通过video 的视频预览来实现的。（参考：[https://www.jianshu.com/p/dc60d8dc07de）](https://www.jianshu.com/p/dc60d8dc07de%EF%BC%89)
 
@@ -108,4 +110,3 @@ export const checkSize = async (files, size) => {
 } }
 />
 ```
-

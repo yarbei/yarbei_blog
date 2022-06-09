@@ -1,4 +1,6 @@
-## Warning_ Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
+# Warning_ Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
+
+# Warning_ Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
 
 antD表格警告：warning.js?2149:7 Warning: [antdv: Each record in table should have a unique
 
@@ -14,4 +16,3 @@ antD表格警告：warning.js?2149:7 Warning: [antdv: Each record in table shoul
    rowKey={(record, index) => index}//解决antd表格警告
 >
 ```
-

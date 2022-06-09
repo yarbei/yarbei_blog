@@ -1,8 +1,8 @@
-## log
+# log
+
+# log
 
 ---
-
-### abbrlink: 5
 
 输出log代码段
 
@@ -99,4 +99,3 @@ console.error = function (...args: string[]): void {
 
 export default log
 ```
-

@@ -1,12 +1,14 @@
-## electron实现复制文字和图片到剪切板
+# electron实现复制文字和图片到剪切板
+
+# electron实现复制文字和图片到剪切板
 
 ---
 
-### abbrlink: 10
+## abbrlink: 10
 
 这是一个使用electron开发的客户端项目，其中想要实现一个模拟右键菜单复制的功能。
 
-### 文字的复制
+## 文字的复制
 
 首先需要创建一个selection对象，该对象即为你左键拖过选中的文本内容，将其转成字符串保存，然后可以移除选中的区域。
 
@@ -27,7 +29,7 @@ const newInput = document.createElement('input')
   document.body.removeChild(newInput)
 ```
 
-### 图片的复制
+## 图片的复制
 
 尝试过与复制文字相同的思路，即通过getSelection()获取选中部分的图片信息，最后通过execCommand(‘copy’)存入剪贴板，但是这样并不能实现复制图片到剪切板。
 
@@ -77,4 +79,3 @@ clipboard.writeImage(image)
 const image = nativeImage.createFromPath(‘C:\\xxx\\xxx\\xxx.png')
 clipboard.writeImage(image)
 ```
-
