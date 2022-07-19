@@ -1,14 +1,6 @@
 # log
 
-# log
-
----
-
-输出log代码段
-
-​
-
-```javascript
+```js
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import chalk from 'chalk'
 import ora = require('ora')

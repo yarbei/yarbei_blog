@@ -4,8 +4,6 @@
 
 ---
 
-## abbrlink: 18
-
 今天有个需求，我先来交代一下背景：
 
 项目中由于之前的历史遗留问题，应用内的下载操作都是用node来实现的，目的是为了获取到文件的下载进度，从而达到一个展示出下载进度条的一个小功能。但是现在由于一些其他的原因，不能支持node双向认证。所以我们现在要把把原来用node实现的下载功能替换为浏览器的下载功能。
@@ -16,103 +14,115 @@
 
 渲染进程中：
 
+```js
+
 let options = {
 
-type: "file",
+	type: "file",
 
-fileUrl: "[http://www.xxx.xxx/download/文件1.txt](http://www.xxx.xxx/download/%E6%96%87%E4%BB%B61.txt)",
+	fileUrl: "[http://www.xxx.xxx/download/文件1.txt](http://www.xxx.xxx/download/%E6%96%87%E4%BB%B61.txt)",
 
-fileName: "文件1.txt",
+	fileName: "文件1.txt",
 
 };
 
 window.electron.ipcRenderer.send("file-download",options);
+```
 
 主进程中：
+
+```js
 
 //download监听
 
 ipcMain.on('file-download', (event, options) => {
 
-mainWindow.webContents.downloadURL(options.fileUrl);
+	mainWindow.webContents.downloadURL(options.fileUrl);
 
 });
+```
 
 在这里我们使主进程通过downloadURL方法来触发下载动作，所有的下载动作都会被will-download给捕获到，那么我们今天的重点就在will-download这个事件之中。
 
+```js
 const path = require("path");
 
 mainWindow.webContents.session.on('will-download', (event, item, webContents) => {
 
 // 设置文件保存位置
 
-let fileSavePath = path.join(app.getPath('downloads'), item.getFilename());
+	let fileSavePath = path.join(app.getPath('downloads'), item.getFilename());
 
-item.setSavePath(fileSavePath);
+	item.setSavePath(fileSavePath);
 
 })
+
+```
 
 在上面的代码中，我们已经通过will-download事件回调中item这个参数实现了设置文件存放位置的功能，我们接下来的操作也是围绕着item来进行的。
 
+```js
+
 const path = require("path");
 
 mainWindow.webContents.session.on('will-download', (event, item, webContents) => {
 
-// 设置文件保存位置
+	// 设置文件保存位置
 
-let fileSavePath = path.join(app.getPath('downloads'), item.getFilename());
+	let fileSavePath = path.join(app.getPath('downloads'), item.getFilename());
 
-item.setSavePath(fileSavePath);
+	item.setSavePath(fileSavePath);
 
-// 监听文件下载进度
+	// 监听文件下载进度
 
-item.on('updated', (event, state) => {
+	item.on('updated', (event, state) => {
 
-if (state === 'interrupted') {
+		if (state === 'interrupted') {
 
-// 下载被打断
+		// 下载被打断
 
-} else if (state === 'progressing') {
+		} else if (state === 'progressing') {
 
-// 下载进行中
+		// 下载进行中
+	
+		}
 
-if (item.isPaused()) {
+		if (item.isPaused()) {
 
-// 暂停下载
+		// 暂停下载
 
-} else {
+		} else {
 
-// 下载进度
+		// 下载进度
 
-console.log(`已经下载的字节数: ${item.getReceivedBytes()}/总字节数: ${item.getTotalBytes()}`)
+		console.log(`已经下载的字节数: ${item.getReceivedBytes()}/总字节数: ${item.getTotalBytes()}`)
 
-}
+		}
 
-}
+		console.log("update")
 
-console.log("update")
+	})
+
+	item.once('done', (event, state) => {
+
+		if (state === 'completed') {
+
+			// 下载成功
+
+			console.log("下载成功！")
+
+		} else {
+
+			// 下载出错
+
+			console.log(`Download failed: ${state}`)
+
+		}
+
+	})
 
 })
-
-item.once('done', (event, state) => {
-
-if (state === 'completed') {
-
-// 下载成功
-
-console.log("下载成功！")
-
-} else {
-
-// 下载出错
-
-console.log(`Download failed: ${state}`)
-
-}
-
-})
-
-})
+```
 
 上面主要写了item的两个事件updated和done。
 

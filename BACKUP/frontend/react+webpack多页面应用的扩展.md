@@ -4,7 +4,6 @@
 
 ---
 
-## abbrlink: 13
 
 1. 在config/webpack.config.js里找到entry
 

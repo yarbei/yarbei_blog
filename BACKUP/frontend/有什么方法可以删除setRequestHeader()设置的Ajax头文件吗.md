@@ -1,10 +1,8 @@
-# 有什么方法可以删除setRequestHeader()设置的Ajax头文件吗_
+# 有什么方法可以删除setRequestHeader()设置的Ajax头文件吗
 
-# 有什么方法可以删除setRequestHeader()设置的Ajax头文件吗_
 
 ---
 
-## abbrlink: 15
 
 我正在编写一个JS脚本，该脚本位于一个系统中，该系统现在通过jqXHR.setRequestHeader()向所有Ajax请求添加一个自定义的XID头，该函数注册于jQuery.ajaxPrefilter()。
 

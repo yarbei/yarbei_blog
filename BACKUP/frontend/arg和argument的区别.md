@@ -4,7 +4,7 @@
 
 ---
 
-## abbrlink: 25
+## 
 
 …args剩余参数(展开运算符)
 
@@ -245,7 +245,3 @@ doAdd(40, 20);	//输出 "60"
 
 > 3.arguments对象还有一些附加的属性 （如callee属性）。
 >
-
-[
-
-]([https://blog.csdn.net/YauCheun/article/details/100396280](https://blog.csdn.net/YauCheun/article/details/100396280))

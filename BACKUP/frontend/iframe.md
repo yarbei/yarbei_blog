@@ -4,7 +4,6 @@
 
 ---
 
-## abbrlink: 9
 
 该元素包含[全局属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes)。
 
