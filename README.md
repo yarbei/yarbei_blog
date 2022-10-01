@@ -5,9 +5,11 @@ My personal blog using issues and GitHub Actions
  | ---- | ---- | ---- |
 | 亚北yarbei | yarbei.com | 这里是我对世界的一些回应 |
 ## 最近更新
+- [使用rollup.js解锁react组件开发新姿势！](https://github.com/yarbei/yarbei_blog/issues/4)--2022-10-01
 - [JS中数据类型的判断](https://github.com/yarbei/yarbei_blog/issues/3)--2022-06-02
 - [docker+Jenkins+nginx实现前端自动部署](https://github.com/yarbei/yarbei_blog/issues/2)--2022-05-26
 - [友情链接](https://github.com/yarbei/yarbei_blog/issues/1)--2022-05-25
 ## documentation
+- [使用rollup.js解锁react组件开发新姿势！](https://github.com/yarbei/yarbei_blog/issues/4)--2022-10-01
 - [JS中数据类型的判断](https://github.com/yarbei/yarbei_blog/issues/3)--2022-06-02
 - [docker+Jenkins+nginx实现前端自动部署](https://github.com/yarbei/yarbei_blog/issues/2)--2022-05-26
